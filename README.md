@@ -1,3 +1,3 @@
-# Cassandra Tests
+# Redis Distributed Lock
 
-Just some simples tests with cassandra in a 3 node cluster
+Simple test with distributed lock on Redis.
