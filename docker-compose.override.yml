@@ -1,0 +1,11 @@
+version: '3.4'
+
+services:
+  redis:
+    container_name: redislocalvs
+
+  netcoreredislock:
+    image: ${DOCKER_REGISTRY-}netcoreredislock
+    build:
+      context: .
+      dockerfile: RedisDistributedLock/Dockerfile

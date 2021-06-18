@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  redis:
+    image: redis:6.2.4
+    container_name: redislocal
+    hostname: redislocal
+    mem_limit: 512m
+    ports:
+      - "6379:6379"
+
+  netcoreredislock:
+    build:
+      context: RedisDistributedLock/.
+      dockerfile: Dockerfile
+    container_name: netcoreredislock
+    mem_limit: 128m
+    depends_on:
+      - redis
